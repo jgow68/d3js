@@ -1,3 +1,6 @@
+// https://www.dashingd3js.com/d3js-first-steps
+// http://chimera.labs.oreilly.com/books/1230000000345/ch03.html#_the_web
+
 // Console commands for d3.js
 
 // create svg object (circle in purple) option 1
@@ -36,7 +39,23 @@ var p = d3.select("body").selectAll("p") // CSS selectors to grab elements
 	.append("p") // for each placefolder inserted previously, we create "p" HTML paragraph elements
 	.text("hello"); // sets text content on all selected elements
 
+
 	
 // using data bound to DOM elements	
 
+var theData = [1, 2, 3, 4, 5, 6]
 
+var p = d3.select("body").selectAll("p")
+	.data(theData)
+	.enter()
+	.append("p")
+	.text( function(d) { return d; } ) // function evaluates each element in order
+	.text( function(d) {
+		var addedNumber = 2;
+		var tempNumber;
+		tempNumber = d + addedNumber; // add number 2  to the array
+		return tempNumber;}
+	)
+
+
+	
